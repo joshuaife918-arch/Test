@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voixe | Premium Audio Experience</title>
+    <style>
+        /* --- Base Setup --- */
+        :root {
+            --primary-white: #ffffff;
+            --bg-dark: #000000;
+            --card-bg: #0d0d0d;
+            --text-grey: #888888;
+            --accent: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--primary-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(1,1,1,0.1);
+            backdrop-filter: blur(15px);
+        }
+
+        .logo { font-size: 22px; font-weight: 800; letter-spacing: 2px; }
+        nav ul { display: flex; gap: 25px; }
+        nav ul li { list-style: none; font-size: 13px; text-transform: uppercase; cursor: pointer; opacity: 0.7; transition: 0.3s; }
+        nav ul li:hover { opacity: 1; }
+
+        /* --- Hero Section --- */
+        .hero {
+            margin:0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 8%;
+            flex-wrap: wrap; /* Critical for responsiveness */
+            background: 
+    linear-gradient(rgba(0,0,0,0.85), rgba(1,1,1,0.4)), /* Color overlay layer */
+    url(background.jpg);                              /* Image layer */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+        
+
+        .hero-content { flex: 1; min-width: 300px; padding-right: 20px;}
+        .hero-content h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1; margin-bottom: 20px; }
+        
+        .hero-image { flex: 1; min-width: 300px; display: flex; justify-content: center; }
+        .hero-image img { width: 100%; max-width: 550px; height: auto; transition: transform 0.5s; }
+
+        .btn {
+            padding: 16px 35px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            text-align: center;
+        }
+        .btn-white { background: #fff; color: #000; margin-right: 15px; }
+        .btn-white:hover { background: #e0e0e0; transform: translateY(-3px); }
+
+        /* --- Feature Grid --- */
+        .features { padding: 80px 8%; text-align: center; }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            margin-top: 50px;
+        }
+        /* --- Contact Section --- */
+        .contact-section {
+            padding: 100px 8%;
+            background: #050505;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+
+        .contact-info { flex: 1; min-width: 300px; }
+        .contact-form { flex: 1.5; min-width: 300px; }
+
+        .contact-info h2 { font-size: 3rem; margin-bottom: 20px; }
+        .info-item { margin-bottom: 30px; }
+        .info-item h4 { color: var(--text-grey); text-transform: uppercase; font-size: 12px; margin-bottom: 5px; }
+        
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            background: #111;
+            border: 1px solid #222;
+            color: #fff;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            outline: none;
+        }
+        input:focus, textarea:focus { border-color: #fff; }
+
+        /* --- Footer --- */
+        footer {
+            padding: 50px 8%;
+            border-top: 1px solid #1a1a1a;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-grey);
+        }
+
+        /* --- Responsive Tweaks --- */
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* Hide menu on mobile, could add a burger menu later */
+            .hero { text-align: center; padding: 120px 5% 50px; }
+            .hero-content { padding-right: 0; margin-bottom: 50px; }
+            .contact-section { padding: 60px 5%; }
+        }
+        .feature-card1{
+          background-size:cover ;
+          background-image: url(1.jpg);
+          background-repeat: no-repeat;
+            padding: 40px 30px;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            transition: 2s;
+            animation: slide-in 3s ease alternate;
+        }
+        @keyframes slide-in{
+            0%{
+                opacity: 0;
+                transform: translateY(100px);
+
+            }
+             100%{
+                opacity: 1px;
+                transform: translateY(0);
+            }
+        }
+        
+         .feature-card1:hover { border-color: #555; transform: scale(1.02); }
+         .feature-card2{
+          background-size:cover ;
+          background-image: url(2.jpg );
+          background-repeat: no-repeat;
+            padding: 40px 30px;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            transition: 2s;
+             animation: slide-in 2.5s ease alternate;
+        }
+         .feature-card2:hover { border-color: #555; transform: scale(1.02); }
+         .feature-card3{
+          background-size:cover ;
+          background-image: url(3.jpg);
+          background-repeat: no-repeat;
+            padding: 40px 30px;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            transition: 2s;
+             animation: slide-in 3s ease alternate;
+        }
+         .feature-card3:hover { border-color: #555; transform: scale(1.02); }
+         .feature-card4{
+          background-size:cover ;
+          background-image: url(4.jpg);
+          background-repeat: no-repeat;
+            padding: 40px 30px;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            transition: 2s;
+             animation: slide-in 3.5s ease alternate;
+        }
+         .feature-card4:hover { border-color: #555; transform: scale(1.02); }
+         .img{
+          animation: slide 2s ease alternate;
+          transition:4s ease;
+         }
+         @keyframes slide{
+          0%{
+            opacity: 0;
+            transform: translateX(100px);
+          }
+           100%{
+            opacity: 1px;
+            transform: translateX(0);
+          }
+        }
+         .img:hover{
+          transform: scale(1.1);
+         }
+         .text{
+          animation: slide-down 3s ease-in-out alternate;
+          background-color: linear-gradient(left, red, bleu);
+         }
+                @keyframes slide-down{
+          0%{
+            opacity: 0;
+            transform: translatey(-100px);
+          }
+           100%{
+            opacity: 1px;
+            transform: translatey(0);
+          }
+           } 
+  
+    .blob {
+  width: 400px;
+  height: 400px;
+  /* The secret: Horizontal values / Vertical values */
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  
+  /* Gradient matching the image */
+  background:url(1.jpg); 
+  /* Adding a subtle glow like the UI in the image */
+  box-shadow: 0 10px 100px rgba(125, 95, 255, 0.9);
+  
+  /* Centers content if you put text inside */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+        animation:cover 3s ease alternate-revers infinite;
+}
+@keyframes cover{
+    0%{
+          background: linear-gradient(135deg, #00fbff 
+         background:url(1.jpg); 
+    }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">VOIXE</div>
+        <ul>
+            <li>Home</li><li>Products</li><li>About</li><li>Contact</li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+           <div class="text"><h1>Welcome to <br>Our Speaker</h1></div> 
+            <p style="color: var(--text-grey); margin-bottom: 35px; max-width: 500px;">
+                Experience studio-quality sound from the comfort of your home. Precision engineering meets minimalist design.
+            </p>
+            <a href="#" class="btn btn-white">Shop Now</a>
+        </div>
+        <div class="hero-image">
+            <img class="img" src="intro.png" alt="Voixe Speaker">
+        </div>
+    </section>
+
+    <section class="features reveal">
+        <h2>Unrivaled Audio Quality</h2>
+        <div class="feature-grid">
+            <div class="feature-card1">
+                <h3>High Fidelity</h3>
+                <p style="color:var(--text-grey); margin-top:10px">Lossless audio streaming for the purest listening experience.</p>
+              </div>
+            <div class="feature-card2">
+                <h3>Adaptive EQ</h3>
+                <p style="color:var(--text-grey); margin-top:10px">Tuned perfectly to the acoustics of your specific room.</p>
+            </div>
+            <div class="feature-card3">
+                <h3>40hr Battery</h3>
+                <p style="color:var(--text-grey); margin-top:10px">Industry leading power that keeps the music going.</p>
+            </div>
+            <div class="feature-card4">
+                <h3>Smart Connect</h3>
+                <p style="color:var(--text-grey); margin-top:10px">Seamlessly switch between all your favorite devices.</p>
+            </div>
+        </div>
+    </section> 
+    <p class="blob"></p>
+    <section id="contact" class="contact-section reveal">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <div class="info-item">
+                <h4>Email</h4>
+                <p>hello@voixe.com</p>
+            </div>
+            <div class="info-item">
+                <h4>Headquarters</h4>
+                <p>123 Audio Lane, Sound Valley<br>California, 90210</p>
+            </div>
+            <div class="info-item">
+                <h4>Social</h4>
+                <p>Instagram / Twitter / LinkedIn</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea rows="5" placeholder="How can we help?"></textarea>
+                <button type="submit" class="btn btn-white" style="width: 100%; border-radius: 0;">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        &copy; 2026 VOIXE AUDIO TECHNOLOGY. ALL RIGHTS RESERVED.
+    </footer>
+
+    <script>
+        // Intersection Observer for Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.4 });
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
