@@ -1,0 +1,297 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        color:#F0EAD6;
+        font-family:Times New Roman;
+    }
+    nav{
+        width:100vw;
+        height:56px;
+        background:rgba(255, 215, 0, 0.15);
+        backdrop-filter:blur(55px);
+        top:0;
+        position:fixed;
+        z-index:2;
+        
+    }
+    ul{  
+        display:none;
+        text-align:center;
+        width:100vw;
+        height:100vh;
+        top:0;
+        z-index:-100;
+        background-color:white;
+        margin:0;
+    }
+    ul li{
+        list-style:none;
+        margin :10px;
+        color:#333;
+        font-weight:meduim;
+        font-size:16px;
+        z-index:100;
+        
+    }
+    .logo{
+       float :left;
+       font-weight:bolder;
+        font-size:2rem;
+        width:80px;
+        height:56px;
+        background-color:#DAA520;
+        border-radius:2px;
+        text-align:center;
+        display:;
+    }
+    .hero{
+        background-image:url("jbl.png");
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center;
+        
+    }
+    .hero-content{
+         position:relative;
+         z-index:1;
+        text-align:center;
+        max-width:900px;
+        
+        
+    } 
+ .hero-tag {
+            display: inline-block;
+            padding: 8px 24px;
+            border: 1px solid #FFA54F;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            font-weight: 500;
+             margin-top:65px;
+             margin-bottom:25px;
+             color:#333;
+        }
+    h1{
+        margin-top:30px;
+        font-size:2.5rem;
+        font-weight:500;
+        
+    }
+    em{
+        color:#DAA520;
+        font-weight:bolder;
+        font-size:56px;
+    }
+    .intro{
+       margin-top:5%; 
+        margin-bottom:60%;
+    }
+    .arrow{
+        width:0.5px;
+        height:80px;        
+        background-color:#FFD700;
+        margin:0 auto;
+        animation:bounce 0.5s ease alternate infinite;
+    }
+    @keyframes bounce{
+        0%{
+            transform:translateY(0px);
+        }
+        100%{
+            transform:translateY(30px);
+        }
+    }
+    .explore{
+        margin-top:15%; 
+        font-size:18px;
+        font-weight:100px;
+        
+    }
+    .menu{
+        float:right;
+        text-align:center;
+        height:46;
+        width:46px;
+        background-color:transparent;
+        color:#333;
+        border:solid 0.5px #333;
+        border-radius:4px;
+        margin:5px;
+        display:;
+        font-size:26px;
+    }
+       .marquee-section {
+            background:#DAA520;
+            padding: 20px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        .marquee-content span {
+            color: var(--gold-light);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 0 40px;
+            font-weight: 500;
+        }
+    @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    .product-container{
+        text-align:center;
+        font-weight:light;
+        margin-top:100px;
+        font-size:22px;
+    }
+    .box{
+        margin-top:50px;
+        align-item:center;
+        justify-content:center;
+    }
+    .line{
+        width:280px;
+        height:0.8px;
+        background-color:black;
+        margin:0 auto;
+    }
+    .product-card1{
+        margin:0 auto;
+        width:320px;
+        height:370px;
+        border-radius: 5px;
+        margin-top:30px;
+        background-image: url("Img1.jpg") ;
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+    }
+     .product-card2{
+        margin:0 auto;
+        width:320px;
+        height:370px;
+        border-radius:5px;
+        margin-top:30px;
+         background-image: url("Img2.jpg") ;
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+    }
+     .product-card3{
+        margin:0 auto;
+        width:320px;
+        height:370px;
+        border-radius:5px;
+         margin-top:30px;
+         background-image: url("Img3.jpg") ;
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+          }
+       .category{
+           width:150px;
+           height:40px;
+           border-radius:4px;
+           background:rgba(0,0,0,0.8);
+           font-size:22px;
+           font-weight:15px;
+           float:right;
+           text-align:center;
+           
+       }
+    </style>
+</header>
+<body>
+    <nav>
+        <div class="logo">JBL</div> <div><button class="menu">&#9776</button></div>
+        <ul>
+            <li href="#">Product</li>
+             <li href="#">service</li>
+             <li href="#">About</li>
+             <li href="#">Collection</li>
+             <li href="#">Contact</li>
+        </ul>
+    </nav>
+        <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Premium Audio Experience</div>
+            <h1>Sound That <br><em>Transcends</em></h1>
+            <p class="intro">Where precision engineering meets timeless design. Every frequency tells a story of craftsmanship and acoustic excellence.</p>
+            <p class="arrow"></p>
+            <p class="explore"><a href="#collection" style="text-decoration:none !important; color:#FFD700;">Explore Collection</a></p>
+  
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-section">
+        <div class="marquee-content">
+            <span>Studio Quality Sound</span>
+            <span>•</span>
+            <span>Premium Materials</span>
+            <span>•</span>
+            <span>Noise Cancellation</span>
+            <span>•</span>
+            <span>Wireless Freedom</span>
+            <span>•</span>
+            <span>24-Hour Battery</span>
+            <span>•</span>
+            <span>Studio Quality Sound</span>
+            <span>•</span>
+            <span>Premium Materials</span>
+            <span>•</span>
+            <span>Noise Cancellation</span>
+            <span>•</span>
+            <span>Wireless Freedom</span>
+            <span>•</span>
+            <span>24-Hour Battery</span>
+            <span>•</span>
+        </div>
+    </div>
+    <section class="product-container">
+        <p style="color:#333;">Curated Selection</p>
+            <h2 style="color:#DAA520;">The Collection</h2>
+        <p class="line"></p>
+        <div class="box">
+            <div class="product-card1">
+                <div class="product-img1">
+                    <p class="category">new</p>
+                </div>
+                <h3 class="product-name"></h3>
+                <p class="description"></p>
+                <p class="price"></p>
+            </div>
+            <div class="product-card2">              
+                <div class="product-img2">
+                    <p class="category">best seller</p>
+                </div>
+                <h3 class="product-name"></h3>
+                <p class="description"></p>
+                <p class="price"></p>
+            </div>
+            <div class="product-card3">
+                <div class="product-img3">
+                    <p class="category">Latest Release</p>
+                </div>
+                <h3 class="product-name"></h3>
+                <p class="description"></p>
+                <p class="price"></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
